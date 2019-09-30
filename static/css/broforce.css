@@ -1,0 +1,47 @@
+
+
+/* ---------------------------------------------
+	EXPLOSIONS
+--------------------------------------------- */
+
+@-webkit-keyframes explosion
+{
+  	0%   { display:block; background-position: 0px 0px; margin-top: 32px; }
+	100% { background-position: -1920px 0px; margin-top: 0px; }
+}
+@keyframes explosion
+{
+  	0%   { display:block; background-position: 0px 0px; margin-top: 32px; }
+	100% { background-position: -1920px 0px; margin-top: 0px; }
+}
+
+@-webkit-keyframes explosion2
+{
+  	0%   { display:block; background-position: 0px 0px; margin-top: 32px; }
+	100% { background-position: -3000px 0px; margin-top: 0px; }
+}
+@keyframes explosion2
+{
+  	0%   { display:block; background-position: 0px 0px; margin-top: 32px; }
+	100% { background-position: -3000px 0px; margin-top: 0px; }
+}
+
+.explosion1
+{
+	position: absolute;
+	background: url("../img/explosion.png");
+	width: 96px;
+	height: 96px;
+	-webkit-animation: explosion 0.8s steps(20) 1;
+	animation: explosion 0.8s steps(20)  1;
+}
+
+.explosion2
+{
+	position: absolute;
+	background: url("../img/explosion2.png");
+	width: 120px;
+	height: 192px;
+	-webkit-animation: explosion2 1s steps(25) 1;
+	animation: explosion2 1s steps(25)  1;
+}
