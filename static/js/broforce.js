@@ -13,6 +13,8 @@ function displayBROFORCE() {
 	$('.big-head').css('display', 'none');
 }
 
+/// JS from http://www.broforcegame.com, thanks y'all, this is awesome
+
 // on-init
 $(document).ready( function() {
 	
