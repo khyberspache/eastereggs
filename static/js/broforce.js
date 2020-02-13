@@ -45,7 +45,7 @@ function explode(delay)
 
 			var index = explosionCount;
 			var parent = $("#explosions");
-			var positionX = $(".logo").offset().left - 50 + Math.random() * 800;
+			var positionX = Math.random() * 800;
 			var positionY = Math.random() * 400;
 			var explosionType = (Math.random() < 0.25 ? 2 : 1);
 
