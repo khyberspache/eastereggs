@@ -4,7 +4,7 @@ from plugins.eastereggs.app.eastereggs_api import EggsApi
 name = 'EasterEggs'
 description = 'Heh heh heh'
 address = None
-access = BaseWorld.Access.RED
+access = BaseWorld.Access.APP
 
 
 async def enable(services):

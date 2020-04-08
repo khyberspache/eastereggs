@@ -1,11 +1,9 @@
 import logging
-import inspect
 
 from aiohttp import web
 from aiohttp_jinja2 import template
 
-from app.api import blue, red
-from app.service.auth_svc import red_authorization, blue_authorization
+from app.service.auth_svc import check_authorization
 from app.utility.base_world import BaseWorld
 
 search_red = dict(access=(BaseWorld.Access.RED, BaseWorld.Access.APP))
@@ -17,13 +15,9 @@ class EggsApi:
     def __init__(self, services):
         self.data_svc = services.get('data_svc')
         self.auth_svc = services.get('auth_svc')
-        self.modules = {
-            'red': {f[0]: f[1] for f in inspect.getmembers(red, inspect.isfunction)},
-            'blue': {f[0]: f[1] for f in inspect.getmembers(blue, inspect.isfunction)}
-        }
         self.log = logging.getLogger('rest_api')
 
-    @red_authorization
+    @check_authorization
     @template('eggsred.html')
     async def red_landing(self, request):
         try:
@@ -35,7 +29,7 @@ class EggsApi:
         except Exception as e:
             logging.error('[!] landing: %s' % e)
 
-    @blue_authorization
+    @check_authorization
     @template('eggsblue.html')
     async def blue_landing(self, request):
         try:
